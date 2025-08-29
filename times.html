@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Principais Times Competitivos - Valorant FanSite</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      font-family: 'Roboto Slab', serif;
+      color: #ff4655;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 10px;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+
+    nav ul li a:hover {
+      background-color: #ff4655;
+    }
+
+    main {
+      margin-top: 40px;
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #ff4655;
+      font-family: 'Roboto Slab', serif;
+    }
+
+    ul#times {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul#times li {
+      font-size: 1.8em;
+      margin: 15px 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    ul#times li.visible {
+      opacity: 1;
+      transform: translateY(0);
+      color: #ff4655;
+    }
+
+    ul#times li a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    ul#times li a:hover {
+      color: #00ffff;
+      transform: scale(1.1);
+    }
+
+    footer {
+      margin-top: 50px;
+      background-color: #1a1a1a;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      border-top: 2px solid #ff4655;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎯 Valorant FanSite</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="agentes.html">Agentes</a></li>
+        <li><a href="mapas.html">Mapas</a></li>
+        <li><a href="armas.html">Armas</a></li>
+        <li><a href="modos.html">Modos</a></li>
+        <li><a href="times.html">Times</a></li>
+        <li><a href="atualizacoes.html">Atualizações</a></li>
+        <li><a href="dicas.html">Dicas</a></li>
+        <li><a href="pro-players.html">Pro Players</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Principais Times Competitivos de Valorant</h2>
+    <ul id="times">
+      <li><a href="https://www.twitch.tv/sentinels" target="_blank">Sentinels</a></li>
+      <li><a href="https://www.fnatic.com" target="_blank">Fnatic</a></li>
+      <li><a href="https://www.teamliquid.com" target="_blank">Team Liquid</a></li>
+      <li><a href="https://www.kruesports.com" target="_blank">KRÜ Esports</a></li>
+      <li><a href="https://www.drx.gg" target="_blank">DRX</a></li>
+      <li><a href="https://www.optic.com" target="_blank">OpTic Gaming</a></li>
+      <li><a href="https://www.g2esports.com" target="_blank">G2 Esports</a></li>
+      <li><a href="https://navi.gg" target="_blank">Natus Vincere</a></li>
+      <li><a href="https://www.loud.gg" target="_blank">LOUD</a></li>
+      <li><a href="https://version1.gg" target="_blank">Version1</a></li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>Valorant FanSite © 2025</p>
+  </footer>
+
+  <script>
+    const times = document.querySelectorAll('#times li');
+    let index = 0;
+
+    function showNextTime() {
+      if(index < times.length){
+        times[index].classList.add('visible');
+        index++;
+        setTimeout(showNextTime, 300);
+      }
+    }
+
+    window.addEventListener('load', () => {
+      showNextTime();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  color: #fff;
+  background-color: #0f1923;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Fundos diferentes para cada página */
+body.home { 
+  background-image: url('https://images3.alphacoders.com/113/1139430.jpg'); 
+}
+body.agentes { 
+  background-image: url('https://images7.alphacoders.com/113/1139431.jpg'); 
+}
+body.mapas { 
+  background-image: url('https://images6.alphacoders.com/113/1139425.jpg'); 
+}
+body.armas { 
+  background-image: url('https://images4.alphacoders.com/113/1139428.jpg'); 
+}
+body.modos { 
+  background-image: url('https://images5.alphacoders.com/113/1139432.jpg'); 
+}
+body.times { 
+  background-image: url('https://images2.alphacoders.com/113/1139427.jpg'); 
+}
+body.atualizacoes { 
+  background-image: url('https://images3.alphacoders.com/113/1139429.jpg'); 
+}
+body.dicas { 
+  background-image: url('https://images8.alphacoders.com/113/1139424.jpg'); 
+}
+body.galeria { 
+  background-image: url('https://images6.alphacoders.com/113/1139426.jpg'); 
+}
+body.contato { 
+  background-image: url('https://images.alphacoders.com/113/1139423.jpg'); 
+}
+
+header {
+  background: rgba(255, 70, 85, 0.9);
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 5px;
+  transition: 0.3s;
+  background: rgba(0,0,0,0.4);
+}
+
+nav ul li a:hover {
+  background: #ff4655;
+  color: #0f1923;
+}
+
+.menu-btn {
+  display: none;
+  background: #0f1923;
+  color: white;
+  border: none;
+  font-size: 24px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #ff4655;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0f1923;
+  color: #ff4655;
+}
+
+/* Footer */
+footer {
+  background: rgba(0,0,0,0.8);
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+/* Responsivo */
+@media(max-width:768px) {
+  .menu-btn {
+    display: block;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul.active {
+    display: flex;
+  }
+}

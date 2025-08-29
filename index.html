@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Valorant - Home</title>
+  <style>
+    /* Estilo geral */
+    body.home {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0b0b0b;
+      color: #fff;
+    }
+
+    /* Header */
+    header {
+      background-color: #1a1a1a;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    nav ul li a:hover {
+      background: #ff4655;
+      color: #fff;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 1.8em;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: url('https://images.unsplash.com/photo-1633937898394-291420b9b3fc?auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    .hero h2, .hero p, .hero .btn {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h2 {
+      font-size: 3.2em;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 15px #000;
+    }
+    .hero p {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 10px #000;
+    }
+
+    /* Botão */
+    .btn {
+      background: linear-gradient(135deg, #ff4655, #ff8a00);
+      color: #fff;
+      border: none;
+      padding: 15px 50px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(255,70,85,0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(255,70,85,0.7);
+    }
+    .btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 5px 15px rgba(255,70,85,0.4);
+    }
+
+    /* Seção Agentes */
+    .agentes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+      padding: 50px 40px;
+      background-color: #111;
+    }
+    .agente-card {
+      background: linear-gradient(135deg, #1a1a1a, #222);
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .agente-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(255,70,85,0.4);
+    }
+    .agente-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      transition: transform 0.3s;
+    }
+    .agente-card img:hover {
+      transform: scale(1.05);
+    }
+    .agente-card h3 {
+      font-weight: 600;
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      background-color: #1a1a1a;
+      font-weight: 500;
+      border-top: 2px solid #ff4655;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 65px;
+        right: 30px;
+        padding: 15px;
+        border-radius: 8px;
+        width: 180px;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      .menu-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body class="home">
+  <header>
+    <h1>🎯 Valorant FanSite</h1>
+    <nav id="menu">
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="agentes.html">Agentes</a></li>
+        <li><a href="mapas.html">Mapas</a></li>
+        <li><a href="armas.html">Armas</a></li>
+        <li><a href="modos.html">Modos</a></li>
+        <li><a href="times.html">Times</a></li>
+        <li><a href="atualizacoes.html">Atualizações</a></li>
+        <li><a href="dicas.html">Dicas</a></li>
+        <li><a href="pro-players.html">Pro Players</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Bem-vindo ao universo Valorant</h2>
+      <p>Descubra agentes, mapas, armas e muito mais sobre o FPS da Riot Games.</p>
+      <button class="btn" onclick="entrarNaAcao()">Entrar na ação</button>
+    </section>
+
+    <section class="agentes">
+      <div class="agente-card">
+        <img src="https://playvalorant.com/en-us/media/agents/jett.png" alt="Jett">
+        <h3>Jett</h3>
+      </div>
+      <div class="agente-card">
+        <img src="https://playvalorant.com/en-us/media/agents/phoenix.png" alt="Phoenix">
+        <h3>Phoenix</h3>
+      </div>
+      <div class="agente-card">
+        <img src="https://playvalorant.com/en-us/media/agents/sage.png" alt="Sage">
+        <h3>Sage</h3>
+      </div>
+      <div class="agente-card">
+        <img src="https://playvalorant.com/en-us/media/agents/brimstone.png" alt="Brimstone">
+        <h3>Brimstone</h3>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Valorant FanSite © 2025</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('#menu ul');
+      menu.classList.toggle('show');
+    }
+
+    function entrarNaAcao() {
+      window.location.href = "https://playvalorant.com/pt-br/download/";
+    }
+  </script>
+</body>
+</html>
